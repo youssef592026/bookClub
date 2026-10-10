@@ -1,0 +1,82 @@
+// نصوص وصور الموقع القابلة للتعديل من لوحة التحكم (صفحة «المحتوى والصور»)
+export const DEFAULT_CONTENT = {
+  logo: './emblem-t.png',
+  heroCover: './logo.png',
+  heroKicker: 'نادي قراءة لطلاب وشباب يحبون الكتب',
+  heroLead: 'نقرأ، نتناقش، ونعبّر عن أفكارنا. نادي أسسه طلاب كلية الحاسبات والمعلومات ليساعد الناس على القراءة.',
+  heroBtn1: 'انضم إلينا',
+  heroBtn2: 'شاهد اللقاءات',
+  aboutTitle: 'عن النادي',
+  aboutImage: './images/about.svg',
+  howTitle: 'إزاي بنشتغل؟',
+  step1Title: 'نحدد فئة الجولة', step1Text: 'في كل جولة نتفق على فئة واحدة، زي روايات أو علوم أو فلسفة.',
+  step2Title: 'كل واحد يختار كتابه', step2Text: 'ليك الحرية الكاملة تختار الكتاب اللي يعجبك داخل الفئة.',
+  step3Title: 'نتقابل ونتناقش', step3Text: 'كل أسبوعين نجتمع ونتبادل الأفكار حول اللي قريناه.',
+  roundTitle: 'فئة الجولة الحالية',
+  boardTitle: 'لوحة الشرف',
+  boardSub: 'نقاط للأعضاء اللي بيشاركوا اقتباساتهم ومراجعاتهم بانتظام.',
+  latestTitle: 'من مراجعاتنا',
+  ctaTitle: 'جاهز تقرأ معانا؟',
+  ctaText: 'انضم لقنواتنا وتابع مواعيد اللقاءات والكتب أول بأول.',
+  ctaImage: './images/discussion.svg',
+  booksTitle: 'الكتب',
+  booksSub: 'الكتب اللي اختارها أعضاء النادي في كل جولة. ابحث أو صفّي حسب الفئة.',
+  booksBannerImage: './images/banner-books.svg',
+  eventsTitle: 'اللقاءات',
+  eventsSub: 'نلتقي كل أسبوعين. تعالَ اسمع وشارك بفكرتك.',
+  eventsBannerImage: './images/banner-events.svg',
+  quotesTitle: 'المراجعات والاقتباسات',
+  quotesSub: 'شارك أجمل ما قرأت واكسب نقاطًا. كل مشاركة بتتراجع قبل ما تظهر.',
+  quotesBannerImage: './images/banner-quotes.svg',
+  joinTitle: 'انضم لنا',
+  joinSub: 'أسهل طريقة تبدأ بيها هي الانضمام لإحدى قنواتنا. وتقدر كمان تسيب بياناتك ونتواصل معاك.',
+  joinBannerImage: './images/banner-join.svg',
+};
+
+export const IMAGE_KEYS = new Set(Object.keys(DEFAULT_CONTENT).filter((k) => /image|cover|logo/i.test(k)));
+
+// scope: 'settings' = يتخزن في الإعدادات الرئيسية، وإلا يتخزن في المحتوى
+export const CONTENT_GROUPS = [
+  { title: 'عام', fields: [
+    { key: 'logo', label: 'شعار الشريط العلوي (يفضل صورة شفافة PNG)', type: 'image' },
+    { key: 'heroCover', label: 'صورة الكتاب ثلاثي الأبعاد في الرئيسية (الغلاف الأمامي)', type: 'image' },
+  ] },
+  { title: 'الصفحة الرئيسية', fields: [
+    { key: 'tagline', scope: 'settings', label: 'العنوان الكبير' },
+    { key: 'heroKicker', label: 'السطر الصغير فوق العنوان' },
+    { key: 'heroLead', label: 'الفقرة تحت العنوان', type: 'textarea' },
+    { key: 'heroBtn1', label: 'نص الزر الأول' },
+    { key: 'heroBtn2', label: 'نص الزر الثاني' },
+    { key: 'aboutTitle', label: 'عنوان قسم «عن النادي»' },
+    { key: 'about', scope: 'settings', label: 'نبذة عن النادي', type: 'textarea' },
+    { key: 'goal', scope: 'settings', label: 'كيف نعمل (الهدف والنقاشات)', type: 'textarea' },
+    { key: 'aboutImage', label: 'صورة قسم «عن النادي»', type: 'image' },
+    { key: 'howTitle', label: 'عنوان قسم «إزاي بنشتغل»' },
+    { key: 'step1Title', label: 'الخطوة ١: العنوان' }, { key: 'step1Text', label: 'الخطوة ١: الوصف', type: 'textarea' },
+    { key: 'step2Title', label: 'الخطوة ٢: العنوان' }, { key: 'step2Text', label: 'الخطوة ٢: الوصف', type: 'textarea' },
+    { key: 'step3Title', label: 'الخطوة ٣: العنوان' }, { key: 'step3Text', label: 'الخطوة ٣: الوصف', type: 'textarea' },
+    { key: 'roundTitle', label: 'عنوان قسم الجولة الحالية' },
+    { key: 'boardTitle', label: 'عنوان لوحة الشرف' },
+    { key: 'boardSub', label: 'وصف لوحة الشرف', type: 'textarea' },
+    { key: 'latestTitle', label: 'عنوان قسم آخر المراجعات' },
+    { key: 'ctaTitle', label: 'عنوان قسم الدعوة للانضمام' },
+    { key: 'ctaText', label: 'نص قسم الدعوة للانضمام', type: 'textarea' },
+    { key: 'ctaImage', label: 'صورة قسم الدعوة للانضمام', type: 'image' },
+  ] },
+  { title: 'صفحة الكتب', fields: [
+    { key: 'booksTitle', label: 'العنوان' }, { key: 'booksSub', label: 'الوصف', type: 'textarea' },
+    { key: 'booksBannerImage', label: 'صورة الصفحة', type: 'image' },
+  ] },
+  { title: 'صفحة اللقاءات', fields: [
+    { key: 'eventsTitle', label: 'العنوان' }, { key: 'eventsSub', label: 'الوصف', type: 'textarea' },
+    { key: 'eventsBannerImage', label: 'صورة الصفحة', type: 'image' },
+  ] },
+  { title: 'صفحة المراجعات', fields: [
+    { key: 'quotesTitle', label: 'العنوان' }, { key: 'quotesSub', label: 'الوصف', type: 'textarea' },
+    { key: 'quotesBannerImage', label: 'صورة الصفحة', type: 'image' },
+  ] },
+  { title: 'صفحة الانضمام', fields: [
+    { key: 'joinTitle', label: 'العنوان' }, { key: 'joinSub', label: 'الوصف', type: 'textarea' },
+    { key: 'joinBannerImage', label: 'صورة الصفحة', type: 'image' },
+  ] },
+];
