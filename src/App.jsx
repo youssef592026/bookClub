@@ -13,8 +13,7 @@ import { StoreProvider, useStore } from './lib/store';
 import { ToastProvider } from './components/ui';
 
 function Gate({ children }) {
-  const { ready, loadError, api } = useStore();
-  if (!ready) return <div className="splash"><img src="./emblem-t.png" alt="" /><p>جارٍ التحميل...</p></div>;
+  const { loadError, api } = useStore();
   return (
     <>
       {loadError && (
